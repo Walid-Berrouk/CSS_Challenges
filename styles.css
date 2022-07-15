@@ -115,6 +115,12 @@ h1 {
     display: none;
 }
 
+/* Position */
+
+.relative {
+    position: relative;
+}
+
 /* Margin */
 .m-20 {
     margin: 20px;
@@ -122,6 +128,10 @@ h1 {
 
 .ml-5 {
     margin-left: 5px;
+}
+
+.mb-40 {
+    margin-bottom: 20rem;
 }
 
 /* Padding */
@@ -261,6 +271,7 @@ h1 {
     grid-template-rows: 200px 200px 200px;
     background-color: #fff;
     color: #444;
+    justify-content: center;
   }
 
   .box {
@@ -309,16 +320,37 @@ h1 {
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
-/* Rolling */
+/* Back and forth */
 
-.roll {
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
+.back-and-forth {
+    background-color: green;
+    animation:back-and-forth 4s linear infinite;
 }
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@keyframes back-and-forth { 
+    0% { 
+        transform: translate(0px);
+    } 
+
+    25% {
+        transform: translate(100px);
+        background-color: blue;
+    }
+
+    50% {
+        transform: translate(0px);
+        background-color: green;
+    }
+
+    75% {
+        transform: translate(-100px);
+        background-color: yellow;
+    }
+
+    100% { 
+        transform: translate(0px);
+    } 
+}
+
 
 
 /* Loading */
